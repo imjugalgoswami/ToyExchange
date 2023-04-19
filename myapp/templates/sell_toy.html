@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .navstyle{
+            background-color: #181B29;
+            box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+        }
+        .navbar{
+            margin-bottom: 2%;
+            
+        }
+        .arrowbtn{
+            color: darkcyan;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navstyle navbar navbar-expand-lg ">
+        <div class=" container-fluid">
+          <a class="navbar-brand" href="/"><i class="fa fas fa-caret-left arrowbtn" style="font-size: 40px;"></i></a>
+        </div>
+    </nav>
+
+    <div class="container " style="width:50vw;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">Register</div>
+                    <div class="card-body">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="{{ form.title.id_for_label }}">Title:</label>
+                                {{ form.title}}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.price.id_for_label }}">Price:</label>
+                                {{ form.price}}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image1.id_for_label }}">Image 1:</label>
+                                {{ form.image1 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image2.id_for_label }}">Image 2:</label>
+                                {{ form.image2 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image3.id_for_label }}">Image 3:</label>
+                                {{ form.image3 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image4.id_for_label }}">Image 4:</label>
+                                {{ form.image4 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image5.id_for_label }}">Image 5:</label>
+                                {{ form.image5 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.image6.id_for_label }}">Image 6:</label>
+                                {{ form.image6 }}
+                            </div>                            
+                            <div class="form-group">
+                                <label for="{{ form.description.id_for_label }}">Description:</label>
+                                {{ form.description}}
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-info my-2">Sell Toy</button>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</body>
+</html>

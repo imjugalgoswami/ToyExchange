@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+{% block stylesheets %}
+    .thead{
+        background-color: #d3d9ca;
+    }
+{% endblock %}
+
+{% block content %}
+  <h1>Your Ads</h1>
+  {% if ads %}
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for ad in ads %}
+        <tr>
+          <td><a href="{% url 'ad_detail' ad.pk %}" >{{ ad.title }}</a></td>
+          <td>{{ ad.price }}</td>
+          <td>{{ ad.created_at }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You haven't posted any ads yet.</p>
+  {% endif %}
+{% endblock %}
+

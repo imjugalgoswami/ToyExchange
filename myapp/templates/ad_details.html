@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block stylesheets %}  
+
+.carousel-style{
+  width:600px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+}
+
+.carousel-item{
+    width:800px;
+    height:500px;
+    <!-- object-fit:cover; -->
+}
+
+
+
+{% endblock %}
+
+{% block content %}
+        <div class="box w-100" >
+          <div class="image-item" >
+            <div id="carouselExample" class="carousel slide carousel-style" >
+              <div class="carousel-inner">
+                {% if ad.image1 %}
+                <div class="carousel-item active">
+                  <img src="{{ad.image1.url}}" class="d-block w-100" alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                {% if ad.image2 %}
+                <div class="carousel-item">
+                  <img src="{{ad.image2.url}}" class=" d-block w-100" alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                {% if ad.image3 %}
+                <div class="carousel-item">
+                  <img src="{{ad.image3.url}}" class="d-block w-100" alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                {% if ad.image4 %}
+                <div class="carousel-item">
+                  <img src="{{ad.image4.url}}" class="d-block " alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                {% if ad.image5 %}
+                <div class="carousel-item">
+                  <img src="{{ad.image5.url}}" class="d-block " alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                {% if ad.image6 %}
+                <div class="carousel-item">
+                  <img src="{{ad.image6.url}}" class="d-block " alt="{{ad.title}}" >
+                </div>
+                {% endif %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+          </div>
+          <div class="details" >
+            <h1>{{ ad.title }}</h1>
+            <p>{{ ad.description }}</p>
+            <p>Price: {{ ad.price }}</p>
+          </div>
+        </div>
+{% endblock %}
